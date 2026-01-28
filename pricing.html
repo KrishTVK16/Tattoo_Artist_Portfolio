@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | InkRealm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-accent);
+            background: linear-gradient(180deg, var(--color-bg-card) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            color: #fff;
+            font-family: var(--font-heading);
+            margin: 20px 0;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            font-family: var(--font-body);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            margin-bottom: 15px;
+            color: var(--color-text-muted);
+        }
+
+        .policy-section {
+            margin-top: 80px;
+            padding: 40px;
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ink<span>Realm</span></a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">Artist</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section-header text-center" style="padding-top: 60px;">
+        <h1>Investment & <span class="text-accent">Rates</span></h1>
+        <p>Quality work requires time and dedication.</p>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="pricing-grid">
+
+                <!-- Card 1 -->
+                <div class="pricing-card">
+                    <h3>Flash Designs</h3>
+                    <div class="price-tag">$100+<span> / piece</span></div>
+                    <p>Pre-drawn unique designs ready to be tattooed.</p>
+                    <ul class="pricing-features">
+                        <li>Fixed Price</li>
+                        <li>Pre-sized (minimal adjustments)</li>
+                        <li>Black & Grey or Color</li>
+                        <li>Single Session</li>
+                    </ul>
+                    <a href="booking.html" class="btn btn-outline">Book Flash</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="pricing-card featured">
+                    <h3>Hourly Rate</h3>
+                    <div class="price-tag">$150<span> / hour</span></div>
+                    <p>For custom work, sleeves, and large scale projects.</p>
+                    <ul class="pricing-features">
+                        <li>Custom Design Included</li>
+                        <li>Pay Per Session</li>
+                        <li>Flexible Scheduling</li>
+                        <li>Free Consultation</li>
+                    </ul>
+                    <a href="booking.html" class="btn">Start Project</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="pricing-card">
+                    <h3>Day Session</h3>
+                    <div class="price-tag">$1000<span> / day</span></div>
+                    <p>Lock in the artist for the entire day (up to 8 hours).</p>
+                    <ul class="pricing-features">
+                        <li>Best Value for Large Pieces</li>
+                        <li>Priority Booking</li>
+                        <li>Lunch Break Included</li>
+                        <li>Full Focus on Your Piece</li>
+                    </ul>
+                    <a href="booking.html" class="btn btn-outline">Book Day</a>
+                </div>
+
+            </div>
+
+            <!-- Policies -->
+            <div class="policy-section">
+                <h3>Deposit & Payment Policy</h3>
+                <p><strong>Deposits:</strong> A non-refundable deposit is required to secure your appointment. This
+                    ranges from $50 to $200 depending on the size of the piece. This deposit comes off the final price
+                    of the session.</p>
+                <p><strong>Cancellations:</strong> We require 48 hours notice for cancellations. If you cancel within 48
+                    hours, your deposit is forfeited.</p>
+                <p><strong>Payment Methods:</strong> We accept Cash (preferred), Credit Cards, and Venmo/Zelle.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="margin-top: auto;">
+        <div class="container text-center text-muted copyright">
+            &copy; 2024 InkRealm Studio.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

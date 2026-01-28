@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | InkRealm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .blog-content p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            color: var(--color-accent);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ink<span>Realm</span></a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">Artist</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section-header text-center" style="padding-top: 60px;">
+        <h1>The <span class="text-accent">Journal</span></h1>
+        <p>Thoughts on art, culture, and skin.</p>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-grid">
+
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <a href="blog-details.html">
+                        <div class="blog-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80');">
+                        </div>
+                    </a>
+                    <div class="blog-content">
+                        <span class="blog-date">Oct 12, 2023</span>
+                        <h3><a href="blog-details.html" style="text-decoration: none; color: inherit;">The Ultimate
+                                Aftercare Guide</a></h3>
+                        <p>Healing your new tattoo properly is just as important as the session itself. Here are the top
+                            mistakes to avoid...</p>
+                        <a href="blog-details.html" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <a href="blog-details.html">
+                        <div class="blog-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&q=80');">
+                        </div>
+                    </a>
+                    <div class="blog-content">
+                        <span class="blog-date">Sep 28, 2023</span>
+                        <h3><a href="blog-details.html" style="text-decoration: none; color: inherit;">Choosing Your
+                                First Realism Piece</a></h3>
+                        <p>Realism tattoos require specific skin types and placements to age well. Let's dive into what
+                            makes a good reference photo.</p>
+                        <a href="blog-details.html" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <a href="blog-details.html">
+                        <div class="blog-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&q=80');">
+                        </div>
+                    </a>
+                    <div class="blog-content">
+                        <span class="blog-date">Sep 15, 2023</span>
+                        <h3><a href="blog-details.html" style="text-decoration: none; color: inherit;">Convention Travel
+                                Dates 2024</a></h3>
+                        <p>I'll be hitting the road this year! Check out the list of cities I'll be visiting and how to
+                            book a slot.</p>
+                        <a href="blog-details.html" class="read-more">Read Article &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-top: auto;">
+        <div class="container text-center text-muted copyright">
+            &copy; 2024 InkRealm Studio.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

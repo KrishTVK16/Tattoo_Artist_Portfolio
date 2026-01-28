@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | InkRealm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: var(--color-bg-alt);
+            border-right: 1px solid var(--color-border);
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--color-accent);
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 10px;
+            color: var(--color-text-muted);
+            border-radius: 4px;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: var(--color-bg-card);
+            color: #fff;
+        }
+
+        .main-content {
+            padding: 40px;
+            overflow-x: auto;
+        }
+
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background-color: var(--color-bg-card);
+            padding: 20px;
+            border: 1px solid var(--color-border);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        /* Table Styles */
+        .inquiry-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background-color: var(--color-bg-card);
+        }
+
+        .inquiry-table th,
+        .inquiry-table td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .inquiry-table th {
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-new {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+
+        .badge-pending {
+            background-color: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .badge-booked {
+            background-color: rgba(33, 150, 243, 0.2);
+            color: #2196f3;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            /* Hide sidebar on mobile for simplified demo */
+            .stats-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo" style="text-decoration: none;">Ink<span>Realm</span></a>
+            <div style="font-size: 0.8rem; margin-bottom: 40px; color: var(--color-text-muted);">Admin Panel</div>
+
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active">Inquiries</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Gallery Upload</a></li>
+                <li><a href="#" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; background: transparent; border: none; padding: 0;">
+                <h2>Inquiry <span class="text-accent">Portal</span></h2>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <span style="color: var(--color-text-muted);">Welcome, Elena</span>
+                    <div style="width: 40px; height: 40px; background-color: var(--color-accent); border-radius: 50%;">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <h3>12</h3>
+                    <div class="text-muted">New Inquiries</div>
+                </div>
+                <div class="stat-card">
+                    <h3>5</h3>
+                    <div class="text-muted">Pending Review</div>
+                </div>
+                <div class="stat-card">
+                    <h3>$3.2k</h3>
+                    <div class="text-muted">Pending Deposits</div>
+                </div>
+                <div class="stat-card">
+                    <h3>28</h3>
+                    <div class="text-muted">Upcoming Sessions</div>
+                </div>
+            </div>
+
+            <!-- Inquiries Table -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); padding: 20px;">
+                <h3 style="margin-bottom: 20px; font-size: 1.2rem;">Recent Requests</h3>
+
+                <table class="inquiry-table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Idea / Concept</th>
+                            <th>Placement</th>
+                            <th>Budget</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Sarah Jenkins</strong><br>
+                                <span class="text-muted" style="font-size: 0.8rem;">sarah.j@email.com</span>
+                            </td>
+                            <td>Geometric Fox, Fine Line...</td>
+                            <td>Forearm</td>
+                            <td>$400-$800</td>
+                            <td>Oct 24</td>
+                            <td><span class="badge badge-new">New</span></td>
+                            <td><button class="btn btn-outline"
+                                    style="padding: 4px 12px; font-size: 0.8rem;">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Mike Ross</strong><br>
+                                <span class="text-muted" style="font-size: 0.8rem;">mike.r@email.com</span>
+                            </td>
+                            <td>Traditional Dagger Cover-up</td>
+                            <td>Calf</td>
+                            <td>$800+</td>
+                            <td>Oct 23</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                            <td><button class="btn btn-outline"
+                                    style="padding: 4px 12px; font-size: 0.8rem;">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Jessica Lee</strong><br>
+                                <span class="text-muted" style="font-size: 0.8rem;">j.lee@email.com</span>
+                            </td>
+                            <td>Floral Sleeve Addition</td>
+                            <td>Upper Arm</td>
+                            <td>Session</td>
+                            <td>Oct 22</td>
+                            <td><span class="badge badge-booked">Booked</span></td>
+                            <td><button class="btn btn-outline"
+                                    style="padding: 4px 12px; font-size: 0.8rem;">Manage</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>David Black</strong><br>
+                                <span class="text-muted" style="font-size: 0.8rem;">d.black@email.com</span>
+                            </td>
+                            <td>Full Back Piece (Part 1)</td>
+                            <td>Back</td>
+                            <td>Session</td>
+                            <td>Oct 20</td>
+                            <td><span class="badge badge-booked">Booked</span></td>
+                            <td><button class="btn btn-outline"
+                                    style="padding: 4px 12px; font-size: 0.8rem;">Manage</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InkRealm | Tattoo Artist Portfolio V2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ink<span>Realm</span></a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">Artist</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Variant) -->
+    <section class="hero-section hero-v2">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-left">
+            <h1>Define Your <span class="text-accent">Legacy</span></h1>
+            <p style="max-width: 600px; margin-bottom: 2rem; font-size: 1.2rem;">
+                Premier tattoo artistry specializing in realism and complex compositions. 
+                Your skin is the canvas for our masterpiece.
+            </p>
+            <div class="hero-btns" style="justify-content: flex-start;">
+                <a href="booking.html" class="btn">Book Appointment</a>
+                <a href="services.html" class="btn btn-outline">Explore Styles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div class="about-text">
+                    <h2>The <span class="text-accent">Artist</span></h2>
+                    <p>With over a decade of experience in the industry, I have dedicated my life to the craft of tattooing. My work focuses on the intersection of dark art and organic flow.</p>
+                    <p>I believe that every tattoo should be a unique expression of the individual wearing it. Whether you're looking for a small, meaningful piece or a full bodysuit, I approach every project with the same level of dedication and detail.</p>
+                    <a href="about.html" class="btn btn-outline">Read Bio</a>
+                </div>
+                <div class="about-img">
+                     <div class="placeholder-img" style="height: 400px; background-image: url('https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80'); border: 1px solid var(--color-border);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Works Preview -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header text-center" style="margin-bottom: 60px;">
+                <h2>Recent <span class="text-accent">Creations</span></h2>
+                <p>Selected works from this month.</p>
+            </div>
+            
+            <div class="gallery-grid-mini">
+                <div class="gallery-item">
+                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&q=80');"></div>
+                </div>
+                <div class="gallery-item">
+                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1590246294523-2de4e0fe552c?auto=format&fit=crop&q=80');"></div>
+                </div>
+                <div class="gallery-item">
+                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&q=80');"></div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="portfolio.html" class="btn">View Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Ready to Get <span class="text-accent">Inked?</span></h2>
+            <p>Check our travel dates and convention schedule.</p>
+            <a href="booking.html" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>InkRealm Studio</h4>
+                    <p>123 Art District Ave,<br>Creative City, NY 10012</p>
+                    <p>hello@inkrealm.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="aftercare.html">Aftercare Guide</a></li>
+                        <li><a href="dashboard.html">Admin Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 InkRealm Studio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <style>
+        /* Home V2 Specific Styles */
+        .hero-v2 {
+            background-image: url('https://images.unsplash.com/photo-1550537687-c9135505fafd?auto=format&fit=crop&q=80');
+            justify-content: flex-start; /* Align left */
+        }
+        
+        .hero-v2 .container {
+            width: 100%; /* Ensure container takes width for text align */
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .about-img {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</body>
+</html>

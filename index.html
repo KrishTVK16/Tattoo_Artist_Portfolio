@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InkRealm | Tattoo Artist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ink<span>Realm</span></a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">Artist</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <h1>Art that <span class="text-accent">Bleeds</span> Soul</h1>
+            <p>Specializing in Fine Line, Realism, and Custom Blackwork.</p>
+            <div class="hero-btns">
+                <a href="booking.html" class="btn">Book a Session</a>
+                <a href="portfolio.html" class="btn btn-outline">View Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Statement -->
+    <section class="section section-alt">
+        <div class="container text-center">
+            <h2>The <span class="text-accent">Philosophy</span></h2>
+            <div class="divider"></div>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+                Each piece is more than just ink; it's a collaboration between artist and canvas. 
+                I believe in creating tailored designs that flow with the body's natural lines, 
+                ensuring that your tattoo ages gracefully and tells your unique story.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Works Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center" style="margin-bottom: 60px;">
+                <h2>Latest <span class="text-accent">Works</span></h2>
+                <p>A glimpse into the latest sessions.</p>
+            </div>
+            
+            <div class="gallery-grid-mini">
+                <!-- Using placeholders from images.unsplash for demo purposes -->
+                <div class="gallery-item">
+                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1590246294523-2de4e0fe552c?auto=format&fit=crop&q=80');"></div>
+                </div>
+                <div class="gallery-item">
+                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80');"></div>
+                </div>
+                <div class="gallery-item">
+                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&q=80');"></div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="portfolio.html" class="btn btn-outline">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Ready to Transform?</h2>
+            <p>Slots for next month are filling up fast.</p>
+            <a href="booking.html" class="btn">Start Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>InkRealm Studio</h4>
+                    <p>123 Art District Ave,<br>Creative City, NY 10012</p>
+                    <p>hello@inkrealm.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="aftercare.html">Aftercare Guide</a></li>
+                        <li><a href="dashboard.html">Admin Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 InkRealm Studio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- Inline CSS for Home specifics that need images -->
+    <style>
+        .hero-section {
+            height: 90vh; /* Full viewport height minus header roughly */
+            background-image: url('https://images.unsplash.com/photo-1536642738234-946766465839?auto=format&fit=crop&q=80'); /* Dark moody tattoo vibes */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -85px; /* Pull behind header if transparent, but we set header sticky. Adjusting for visual */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px; /* Offset fixed header */
+        }
+        
+        .hero-btns {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-grid-mini {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .placeholder-img {
+            transform: scale(1.05);
+        }
+
+        .cta-section {
+            background-color: var(--color-bg-card);
+            padding: 100px 20px;
+            border-top: 1px solid var(--color-border);
+        }
+    </style>
+</body>
+</html>

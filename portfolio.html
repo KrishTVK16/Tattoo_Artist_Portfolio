@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | InkRealm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            padding: 8px 16px;
+            font-family: var(--font-nav);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Portfolio Item & Hover */
+        .portfolio-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background-color: var(--color-bg-card);
+            cursor: pointer;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border: 2px solid var(--color-accent);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Same as Index) -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ink<span>Realm</span></a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">Artist</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section-header text-center" style="padding-top: 60px;">
+        <h1>The <span class="text-accent">Gallery</span></h1>
+        <p>A collection of healed works, cover-ups, and custom pieces.</p>
+    </div>
+
+    <!-- Filters -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="realism">Realism</button>
+                <button class="filter-btn" data-filter="traditional">Traditional</button>
+                <button class="filter-btn" data-filter="healed">Healed</button>
+                <button class="filter-btn" data-filter="coverup">Cover-Ups</button>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Portfolio Items -->
+                <!-- Item 1 -->
+                <div class="portfolio-item" data-category="realism">
+                    <img src="https://images.unsplash.com/photo-1590246294523-2de4e0fe552c?auto=format&fit=crop&q=80"
+                        alt="Tattoo Art" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Lion Portrait</h4>
+                        <p class="text-accent">Realism • 6 Hours</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="portfolio-item" data-category="traditional">
+                    <img src="https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80"
+                        alt="Tattoo Art" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Classic Skull</h4>
+                        <p class="text-accent">Traditional • 3 Hours</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="portfolio-item" data-category="healed">
+                    <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?auto=format&fit=crop&q=80"
+                        alt="Healed Tattoo" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Healed Floral Sleeve</h4>
+                        <p class="text-accent">Vegetation • Healed 6 Months</p>
+                    </div>
+                </div>
+                <!-- Item 4 Cover Up -->
+                <div class="portfolio-item" data-category="coverup">
+                    <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&q=80"
+                        alt="Cover Up" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Back Cover Up</h4>
+                        <p class="text-accent">Cover Up • 8 Hours</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="portfolio-item" data-category="realism">
+                    <img src="https://images.unsplash.com/photo-1560707303-4e9803d157df?auto=format&fit=crop&q=80"
+                        alt="Tattoo Art" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Eye Detail</h4>
+                        <p class="text-accent">Micro Realism</p>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="portfolio-item" data-category="traditional">
+                    <img src="https://images.unsplash.com/photo-1577744066060-e747449a036c?auto=format&fit=crop&q=80"
+                        alt="Tattoo Art" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h4>Dagger & Snake</h4>
+                        <p class="text-accent">Neo Traditional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container mobile-footer-container">
+            <!-- Simplified footer classes for brevity, relying on styles.css -->
+            <div class="copyright text-center">
+                &copy; 2024 InkRealm Studio.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Portfolio Specific JS
+        document.addEventListener('DOMContentLoaded', () => {
+            // Filters
+            const buttons = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.portfolio-item');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Lightbox
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const closeBtn = document.getElementById('modalClose');
+
+            document.querySelectorAll('.portfolio-img').forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.classList.add('open');
+                    modalImg.src = img.src;
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('open');
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

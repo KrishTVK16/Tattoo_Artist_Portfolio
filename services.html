@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | InkRealm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .service-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            font-family: var(--font-nav);
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Same) -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ink<span>Realm</span></a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">Artist</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section-header text-center" style="padding-top: 60px;">
+        <h1>Services & <span class="text-accent">Pricing</span></h1>
+        <p>Transparent guidelines for your investment.</p>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="service-card">
+                <h3>Custom Design</h3>
+                <div class="price">Hourly Rate: $150/hr</div>
+                <p>Completely unique pieces designed from scratch based on your consultation. Perfect for sleeves, back
+                    pieces, and complex concepts. Includes one revision of the artwork.</p>
+                <p class="text-muted">Minimum booking: 2 hours.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Flash Tattoos</h3>
+                <div class="price">Flat Rate: $100 - $400</div>
+                <p>Pre-designed artwork available to be tattooed once. These designs are non-customizable but are priced
+                    at a flat rate. Check the 'Flash' highlights on Instagram for available designs.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Cover-Ups & Blast Overs</h3>
+                <div class="price">Hourly Rate: $180/hr</div>
+                <p>Specialized service to hide or rework old tattoos. Requires an in-person consultation to assess
+                    feasibility. These sessions often require more time and skill.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Consultations</h3>
+                <div class="price">Free (30 Mins)</div>
+                <p>A face-to-face or video chat to discuss your ideas, placement, and pricing. Required for all
+                    large-scale custom work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;">Studio <span class="text-accent">Policies</span></h2>
+            <ul
+                style="max-width: 800px; margin: 0 auto; list-style: circle; padding-left: 20px; color: var(--color-text-muted);">
+                <li style="margin-bottom: 20px;"><strong>Deposits:</strong> A non-refundable deposit of $100 is required
+                    to secure all appointments. This comes off the final price.</li>
+                <li style="margin-bottom: 20px;"><strong>Cancellations:</strong> Must be made at least 48 hours in
+                    advance to reschedule without losing your deposit.</li>
+                <li style="margin-bottom: 20px;"><strong>Guests:</strong> Please come alone due to studio space
+                    limitations.</li>
+                <li><strong>Sobriety:</strong> We will not tattoo anyone under the influence of drugs or alcohol.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer style="margin-top: auto;">
+        <div class="container text-center text-muted copyright">
+            &copy; 2024 InkRealm Studio.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

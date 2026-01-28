@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | InkRealm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .service-detail-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .service-info h2 {
+            margin-bottom: 20px;
+            color: var(--color-accent);
+        }
+
+        .service-info ul {
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .service-info ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-info ul li::before {
+            content: "•";
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-right: 10px;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .service-img {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Ink<span>Realm</span></a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">Artist</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
+                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="section-header text-center" style="padding-top: 60px;">
+        <h1>Service <span class="text-accent">Details</span></h1>
+        <p>Comprehensive breakdown of our offering options.</p>
+    </div>
+
+    <section class="section">
+        <div class="container">
+
+            <!-- Service 1: Studio Sessions -->
+            <div class="service-detail-section">
+                <div class="service-info">
+                    <h2>01. Studio Sessions</h2>
+                    <p>Experience the full comfort and privacy of our private studio. This is the ideal option for
+                        large-scale work, first-time clients, or those seeking a controlled environment.</p>
+
+                    <h3>What to Expect:</h3>
+                    <ul>
+                        <li>Private, sanitized environment</li>
+                        <li>Full consultation before starting</li>
+                        <li>Access to premium aftercare products</li>
+                        <li>Comfortable seating for long sessions</li>
+                        <li>Personalized music/media selection</li>
+                    </ul>
+
+                    <a href="booking.html" class="btn">Book a Studio Session</a>
+                </div>
+                <div class="service-img">
+                    <div class="placeholder-img"
+                        style="height: 400px; width: 100%; background-image: url('https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80'); background-size: cover; border: 1px solid var(--color-border);">
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider" style="height: 1px; background: var(--color-border); margin: 60px 0;"></div>
+
+            <!-- Service 2: Events & Travel -->
+            <div class="service-detail-section">
+                <div class="service-img">
+                    <div class="placeholder-img"
+                        style="height: 400px; width: 100%; background-image: url('https://images.unsplash.com/photo-1536642738234-946766465839?auto=format&fit=crop&q=80'); background-size: cover; border: 1px solid var(--color-border);">
+                    </div>
+                </div>
+                <div class="service-info">
+                    <h2>02. Events & Guest Spots</h2>
+                    <p>Catch us on the road! We frequently travel to tattoo conventions and guest spots at other studios
+                        around the world.</p>
+
+                    <h3>Upcoming Locations:</h3>
+                    <ul>
+                        <li>New York Empire State Expo (July)</li>
+                        <li>London Tattoo Convention (September)</li>
+                        <li>Guest Spot: Black Anchor, LA (October)</li>
+                    </ul>
+
+                    <p style="font-size: 0.9rem; margin-top: 20px;"><em>Note: Pricing for conventions may vary due to
+                            travel costs and event fees. Slots are extremely limited.</em></p>
+
+                    <a href="contact.html" class="btn btn-outline">Inquire About Travel</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing Link CTA -->
+    <section class="section section-alt text-center">
+        <div class="container">
+            <h3>Looking for Rates?</h3>
+            <p>We believe in transparency. Check out our detailed pricing guide.</p>
+            <a href="pricing.html" class="btn">View Pricing</a>
+        </div>
+    </section>
+
+    <footer style="margin-top: auto;">
+        <div class="container text-center text-muted copyright">
+            &copy; 2024 InkRealm Studio.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
