@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Upload | Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: var(--color-bg-alt);
+            border-right: 1px solid var(--color-border);
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--color-accent);
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 10px;
+            color: var(--color-text-muted);
+            border-radius: 4px;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: var(--color-bg-card);
+            color: var(--color-text-main);
+        }
+
+        .main-content {
+            padding: 40px;
+            overflow-x: auto;
+        }
+
+        /* Upload Area */
+        .upload-area {
+            border: 2px dashed var(--color-border);
+            background-color: var(--color-bg-card);
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .upload-area:hover {
+            border-color: var(--color-accent);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 15px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-actions {
+            opacity: 1;
+        }
+
+        .btn-delete {
+            background: none;
+            border: none;
+            color: var(--color-error);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo" style="text-decoration: none;"><img src="logo.png" alt="Ink Realm"></a>
+            <div style="font-size: 0.8rem; margin-bottom: 40px; color: var(--color-text-muted);">Admin Panel</div>
+
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html">Inquiries</a></li>
+                <li><a href="dashboard-calendar.html">Calendar</a></li>
+                <li><a href="dashboard-clients.html">Clients</a></li>
+                <li><a href="dashboard-gallery.html" class="active">Gallery Upload</a></li>
+                <li><a href="index.html" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                <h2>Gallery <span class="text-accent">Upload</span></h2>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <button class="theme-toggle" id="theme-toggle">☀️</button>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span style="color: var(--color-text-muted);">Welcome, Elena</span>
+                        <div
+                            style="width: 40px; height: 40px; background-color: var(--color-accent); border-radius: 50%;">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Upload Zone -->
+            <div class="upload-area">
+                <div class="upload-icon">☁️</div>
+                <h3 style="margin-bottom: 10px; color: var(--color-text-main);">Drag & Drop files here</h3>
+                <p style="color: var(--color-text-muted); margin-bottom: 20px;">or click to browse from your computer
+                </p>
+                <button class="btn">Select Files</button>
+            </div>
+
+            <!-- Existing Images -->
+            <h3 style="margin-bottom: 20px; font-size: 1.2rem; color: var(--color-text-main);">Recent Uploads</h3>
+            <div class="gallery-grid">
+                <!-- Placeholders -->
+                <div class="gallery-item">
+                    <img src="images/lion-realism.png" alt="Tattoo 1">
+                    <div class="gallery-actions">
+                        <button class="btn-delete" title="Delete">🗑️</button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/eye-realism.png" alt="Tattoo 2">
+                    <div class="gallery-actions">
+                        <button class="btn-delete" title="Delete">🗑️</button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/skull-traditional.png" alt="Tattoo 3">
+                    <div class="gallery-actions">
+                        <button class="btn-delete" title="Delete">🗑️</button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/floral-healed.png" alt="Tattoo 4">
+                    <div class="gallery-actions">
+                        <button class="btn-delete" title="Delete">🗑️</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InkRealm | Tattoo Artist Portfolio V2</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
@@ -13,20 +14,56 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Ink<span>Realm</span></a>
-            <div class="hamburger" id="hamburger">☰</div>
-            <nav>
-                <ul class="nav-menu" id="nav-menu">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Ink Realm"></a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu">
+                <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link">Artist</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
-                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                    <li><a href="blog.html" class="nav-link">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Right Side Controls -->
+            <div style="display: flex; align-items: center;">
+                <div class="auth-buttons">
+                    <a href="dashboard.html" class="auth-btn">Dashboard</a>
+                    <a href="login.html" class="auth-btn">Login</a>
+                    <a href="register.html" class="auth-btn">Sign Up</a>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">☀️</button>
+                <div class="hamburger" id="hamburger">☰</div>
+            </div>
         </div>
     </header>
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-close" id="offcanvas-close">&times;</div>
+        <ul style="list-style: none; text-align: center;">
+            <li style="margin-bottom: 20px;"><a href="index.html" class="nav-link" style="font-size: 1.2rem;">Home</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="portfolio.html" class="nav-link"
+                    style="font-size: 1.2rem;">Portfolio</a></li>
+            <li style="margin-bottom: 20px;"><a href="about.html" class="nav-link" style="font-size: 1.2rem;">Artist</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="services.html" class="nav-link"
+                    style="font-size: 1.2rem;">Services</a></li>
+            <li style="margin-bottom: 20px;"><a href="contact.html" class="nav-link"
+                    style="font-size: 1.2rem;">Contact</a></li>
+            <li style="margin-bottom: 20px;"><a href="booking.html" class="nav-link" style="font-size: 1.2rem;">Book
+                    Now</a></li>
+            <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px;">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn">Sign Up</a>
+            </div>
+        </ul>
+    </div>
 
     <!-- Hero Section (Variant) -->
     <section class="hero-section hero-v2">
@@ -34,7 +71,7 @@
         <div class="container hero-content text-left">
             <h1>Define Your <span class="text-accent">Legacy</span></h1>
             <p style="max-width: 600px; margin-bottom: 2rem; font-size: 1.2rem;">
-                Premier tattoo artistry specializing in realism and complex compositions. 
+                Premier tattoo artistry specializing in realism and complex compositions.
                 Your skin is the canvas for our masterpiece.
             </p>
             <div class="hero-btns" style="justify-content: flex-start;">
@@ -47,15 +84,21 @@
     <!-- About Preview -->
     <section class="section">
         <div class="container">
-            <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+            <div class="about-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
                 <div class="about-text">
                     <h2>The <span class="text-accent">Artist</span></h2>
-                    <p>With over a decade of experience in the industry, I have dedicated my life to the craft of tattooing. My work focuses on the intersection of dark art and organic flow.</p>
-                    <p>I believe that every tattoo should be a unique expression of the individual wearing it. Whether you're looking for a small, meaningful piece or a full bodysuit, I approach every project with the same level of dedication and detail.</p>
+                    <p>With over a decade of experience in the industry, I have dedicated my life to the craft of
+                        tattooing. My work focuses on the intersection of dark art and organic flow.</p>
+                    <p>I believe that every tattoo should be a unique expression of the individual wearing it. Whether
+                        you're looking for a small, meaningful piece or a full bodysuit, I approach every project with
+                        the same level of dedication and detail.</p>
                     <a href="about.html" class="btn btn-outline">Read Bio</a>
                 </div>
                 <div class="about-img">
-                     <div class="placeholder-img" style="height: 400px; background-image: url('https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80'); border: 1px solid var(--color-border);"></div>
+                    <div class="placeholder-img"
+                        style="height: 400px; background-image: url('https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80'); border: 1px solid var(--color-border);">
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,19 +111,25 @@
                 <h2>Recent <span class="text-accent">Creations</span></h2>
                 <p>Selected works from this month.</p>
             </div>
-            
+
             <div class="gallery-grid-mini">
                 <div class="gallery-item">
-                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&q=80');"></div>
+                    <div class="placeholder-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&q=80');">
+                    </div>
                 </div>
                 <div class="gallery-item">
-                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1590246294523-2de4e0fe552c?auto=format&fit=crop&q=80');"></div>
+                    <div class="placeholder-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1590246294523-2de4e0fe552c?auto=format&fit=crop&q=80');">
+                    </div>
                 </div>
                 <div class="gallery-item">
-                   <div class="placeholder-img" style="background-image: url('https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&q=80');"></div>
+                    <div class="placeholder-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&q=80');">
+                    </div>
                 </div>
             </div>
-            
+
             <div class="text-center" style="margin-top: 40px;">
                 <a href="portfolio.html" class="btn">View Gallery</a>
             </div>
@@ -100,52 +149,79 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
+                <!-- Brand -->
                 <div class="footer-col">
-                    <h4>InkRealm Studio</h4>
-                    <p>123 Art District Ave,<br>Creative City, NY 10012</p>
-                    <p>hello@inkrealm.com</p>
+                    <a href="index.html" class="logo"
+                        style="margin-bottom: 20px; display: block;"><img src="logo.png" alt="Ink Realm"></a>
+                    <p>Art that bleeds soul. Specializing in dark realism and fine line customizations.</p>
+                    <div class="social-links">
+                        <a href="#">IG</a>
+                        <a href="#">TK</a>
+                        <a href="#">PT</a>
+                    </div>
                 </div>
+
+                <!-- Company -->
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h4>Company</h4>
                     <ul class="footer-links">
+                        <li><a href="about.html">About Artist</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="booking.html">Booking</a></li>
-                        <li><a href="aftercare.html">Aftercare Guide</a></li>
-                        <li><a href="dashboard.html">Admin Login</a></li>
+                        <li><a href="pricing.html">Pricing & Rates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
+
+                <!-- Support -->
                 <div class="footer-col">
-                    <h4>Follow Us</h4>
+                    <h4>Support</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">TikTok</a></li>
-                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="aftercare.html">Aftercare Guide</a></li>
+                        <li><a href="booking.html">Booking Policy</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Portal</a></li>
                     </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on travel dates and new flash drops.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px;">
+                        <button type="submit" class="btn" style="width: 100%; padding: 10px;">Subscribe</button>
+                    </form>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2024 InkRealm Studio. All Rights Reserved.
+                &copy; 2026 InkRealm Studio. All Rights Reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <div class="back-to-top" id="back-to-top">↑</div>
+
     <script src="script.js"></script>
-    
+
     <style>
         /* Home V2 Specific Styles */
         .hero-v2 {
             background-image: url('https://images.unsplash.com/photo-1550537687-c9135505fafd?auto=format&fit=crop&q=80');
-            justify-content: flex-start; /* Align left */
+            justify-content: flex-start;
+            /* Align left */
         }
-        
+
         .hero-v2 .container {
-            width: 100%; /* Ensure container takes width for text align */
+            width: 100%;
+            /* Ensure container takes width for text align */
         }
-        
+
         @media (max-width: 768px) {
             .about-grid {
                 grid-template-columns: 1fr !important;
             }
+
             .about-img {
                 order: -1;
                 margin-bottom: 20px;
@@ -153,4 +229,5 @@
         }
     </style>
 </body>
+
 </html>

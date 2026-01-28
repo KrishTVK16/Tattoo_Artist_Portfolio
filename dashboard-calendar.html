@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar | Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: var(--color-bg-alt);
+            border-right: 1px solid var(--color-border);
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--color-accent);
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 10px;
+            color: var(--color-text-muted);
+            border-radius: 4px;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: var(--color-bg-card);
+            color: var(--color-text-main);
+        }
+
+        .main-content {
+            padding: 40px;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo" style="text-decoration: none;"><img src="logo.png" alt="Ink Realm"></a>
+            <div style="font-size: 0.8rem; margin-bottom: 40px; color: var(--color-text-muted);">Admin Panel</div>
+
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html">Inquiries</a></li>
+                <li><a href="dashboard-calendar.html" class="active">Calendar</a></li>
+                <li><a href="dashboard-clients.html">Clients</a></li>
+                <li><a href="dashboard-gallery.html">Gallery Upload</a></li>
+                <li><a href="index.html" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                <h2>My <span class="text-accent">Schedule</span></h2>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <button class="theme-toggle" id="theme-toggle">☀️</button>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span style="color: var(--color-text-muted);">Welcome, Elena</span>
+                        <div
+                            style="width: 40px; height: 40px; background-color: var(--color-accent); border-radius: 50%;">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div
+                style="background: var(--color-bg-card); padding: 40px; border: 1px solid var(--color-border); text-align: center;">
+                <h3 style="margin-bottom: 20px;">October 2026</h3>
+                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center;">
+                    <!-- Weekdays -->
+                    <div style="font-weight: bold; color: var(--color-accent);">Sun</div>
+                    <div style="font-weight: bold; color: var(--color-accent);">Mon</div>
+                    <div style="font-weight: bold; color: var(--color-accent);">Tue</div>
+                    <div style="font-weight: bold; color: var(--color-accent);">Wed</div>
+                    <div style="font-weight: bold; color: var(--color-accent);">Thu</div>
+                    <div style="font-weight: bold; color: var(--color-accent);">Fri</div>
+                    <div style="font-weight: bold; color: var(--color-accent);">Sat</div>
+
+                    <!-- Days -->
+                    <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">28</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">29</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">30</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">1</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">2</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">3</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">4
+                        <div style="font-size: 0.7rem; color: var(--color-accent); margin-top: 5px;">• 2 Sessions</div>
+                    </div>
+
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">5</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">6</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">7</div>
+                    <div
+                        style="padding: 20px; border: 1px solid var(--color-border); background: var(--color-accent); color: #000; font-weight: bold;">
+                        8
+                    </div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">9</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">10</div>
+                    <div style="padding: 20px; border: 1px solid var(--color-border);">11</div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

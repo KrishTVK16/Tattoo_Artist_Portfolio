@@ -26,7 +26,7 @@
 
         .auth-card h2 {
             margin-bottom: 30px;
-            color: #fff;
+            color: var(--color-text-main);
         }
 
         .form-group {
@@ -46,7 +46,7 @@
             padding: 12px;
             background-color: var(--color-bg-alt);
             border: 1px solid var(--color-border);
-            color: #fff;
+            color: var(--color-text-main);
             font-family: var(--font-body);
         }
 
@@ -63,21 +63,22 @@
         .auth-links a {
             color: var(--color-accent);
         }
+
+        .btn-social:hover {
+            border-color: var(--color-accent) !important;
+            color: var(--color-accent) !important;
+        }
     </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
 
-    <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Ink<span>Realm</span></a>
-            <div class="hamburger" id="hamburger">☰</div>
-            <a href="index.html" style="color: #fff; font-size: 1.5rem;">&times;</a>
-        </div>
-    </header>
-
     <div class="auth-container">
         <div class="auth-card">
+            <a href="index.html" class="logo"
+                style="display: block; margin-bottom: 30px; text-decoration: none; margin-left: auto; margin-right: auto; width: fit-content;"><img
+                    src="logo.png" alt="Ink Realm"></a>
             <h2>Create Account</h2>
             <form id="registerForm">
                 <div class="form-group">
@@ -90,22 +91,54 @@
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" required placeholder="Create a password">
+                    <input type="password" required placeholder="••••••••">
                 </div>
                 <div class="form-group">
                     <label>Confirm Password</label>
-                    <input type="password" required placeholder="Confirm password">
+                    <input type="password" required placeholder="••••••••">
                 </div>
 
-                <button type="submit" class="btn" style="width: 100%;">Register</button>
+                <div class="form-group">
+                    <label
+                        style="display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; color: var(--color-text-muted);">
+                        <input type="checkbox" required style="width: auto;">
+                        <span>I agree to the <a href="#" class="text-accent">Terms & Privacy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Create Account</button>
             </form>
 
+            <div class="social-login"
+                style="margin-top: 30px; border-top: 1px solid var(--color-border); padding-top: 20px;">
+                <p style="margin-bottom: 15px; font-size: 0.9rem;">Or sign up with</p>
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <button class="btn-social"
+                        style="background: transparent; border: 1px solid var(--color-border); padding: 10px; border-radius: 4px; cursor: pointer; color: var(--color-text-main); display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; transition: var(--transition);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.908 8.908 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button class="btn-social"
+                        style="background: transparent; border: 1px solid var(--color-border); padding: 10px; border-radius: 4px; cursor: pointer; color: var(--color-text-main); display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; transition: var(--transition);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.647 4.504-4.647 1.299 0 2.67.232 2.67.232v2.933h-1.504c-1.49 0-1.955.925-1.955 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
             <div class="auth-links">
-                <p>Already have an account? <a href="login.html">Sign in here</a></p>
+                <p>Already have an account? <a href="login.html">Login here</a></p>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
     <script>
         document.getElementById('registerForm').addEventListener('submit', function (e) {

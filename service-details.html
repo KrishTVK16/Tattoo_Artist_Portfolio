@@ -50,26 +50,64 @@
             }
         }
     </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Ink<span>Realm</span></a>
-            <div class="hamburger" id="hamburger">☰</div>
-            <nav>
-                <ul class="nav-menu" id="nav-menu">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Ink Realm"></a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu">
+                <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link">Artist</a></li>
                     <li><a href="services.html" class="nav-link active">Services</a></li>
-                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
-                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                    <li><a href="blog.html" class="nav-link">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Right Side Controls -->
+            <div style="display: flex; align-items: center;">
+                <div class="auth-buttons">
+                    <a href="dashboard.html" class="auth-btn">Dashboard</a>
+                    <a href="login.html" class="auth-btn">Login</a>
+                    <a href="register.html" class="auth-btn">Sign Up</a>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">☀️</button>
+                <div class="hamburger" id="hamburger">☰</div>
+            </div>
         </div>
     </header>
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-close" id="offcanvas-close">&times;</div>
+        <ul style="list-style: none; text-align: center;">
+            <li style="margin-bottom: 20px;"><a href="index.html" class="nav-link" style="font-size: 1.2rem;">Home</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="portfolio.html" class="nav-link"
+                    style="font-size: 1.2rem;">Portfolio</a></li>
+            <li style="margin-bottom: 20px;"><a href="about.html" class="nav-link" style="font-size: 1.2rem;">Artist</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="services.html" class="nav-link"
+                    style="font-size: 1.2rem;">Services</a></li>
+            <li style="margin-bottom: 20px;"><a href="contact.html" class="nav-link"
+                    style="font-size: 1.2rem;">Contact</a></li>
+            <li style="margin-bottom: 20px;"><a href="booking.html" class="nav-link" style="font-size: 1.2rem;">Book
+                    Now</a></li>
+            <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px;">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn">Sign Up</a>
+            </div>
+        </ul>
+    </div>
 
     <div class="section-header text-center" style="padding-top: 60px;">
         <h1>Service <span class="text-accent">Details</span></h1>
@@ -144,11 +182,62 @@
         </div>
     </section>
 
-    <footer style="margin-top: auto;">
-        <div class="container text-center text-muted copyright">
-            &copy; 2024 InkRealm Studio.
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo"
+                        style="margin-bottom: 20px; display: block;"><img src="logo.png" alt="Ink Realm"></a>
+                    <p>Art that bleeds soul. Specializing in dark realism and fine line customizations.</p>
+                    <div class="social-links">
+                        <a href="#">IG</a>
+                        <a href="#">TK</a>
+                        <a href="#">PT</a>
+                    </div>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Artist</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing & Rates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="aftercare.html">Aftercare Guide</a></li>
+                        <li><a href="booking.html">Booking Policy</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on travel dates and new flash drops.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px;">
+                        <button type="submit" class="btn" style="width: 100%; padding: 10px;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 InkRealm Studio. All Rights Reserved.
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="back-to-top">↑</div>
     <script src="script.js"></script>
 </body>
 

@@ -39,7 +39,8 @@
         .sidebar-menu a:hover,
         .sidebar-menu a.active {
             background-color: var(--color-bg-card);
-            color: #fff;
+            color: var(--color-text-main);
+            /* Changed from white to variable */
         }
 
         .main-content {
@@ -63,7 +64,8 @@
         .stat-card h3 {
             font-size: 2rem;
             margin-bottom: 5px;
-            color: #fff;
+            color: var(--color-text-main);
+            /* Changed from white to variable */
         }
 
         /* Table Styles */
@@ -126,6 +128,7 @@
             }
         }
     </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
@@ -133,15 +136,15 @@
     <div class="dashboard-container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <a href="index.html" class="logo" style="text-decoration: none;">Ink<span>Realm</span></a>
+            <a href="index.html" class="logo" style="text-decoration: none;"><img src="logo.png" alt="Ink Realm"></a>
             <div style="font-size: 0.8rem; margin-bottom: 40px; color: var(--color-text-muted);">Admin Panel</div>
 
             <ul class="sidebar-menu">
-                <li><a href="#" class="active">Inquiries</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Clients</a></li>
-                <li><a href="#">Gallery Upload</a></li>
-                <li><a href="#" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
+                <li><a href="dashboard.html" class="active">Inquiries</a></li>
+                <li><a href="dashboard-calendar.html">Calendar</a></li>
+                <li><a href="dashboard-clients.html">Clients</a></li>
+                <li><a href="dashboard-gallery.html">Gallery Upload</a></li>
+                <li><a href="index.html" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
             </ul>
         </aside>
 
@@ -150,9 +153,13 @@
             <header
                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; background: transparent; border: none; padding: 0;">
                 <h2>Inquiry <span class="text-accent">Portal</span></h2>
-                <div style="display: flex; gap: 10px; align-items: center;">
-                    <span style="color: var(--color-text-muted);">Welcome, Elena</span>
-                    <div style="width: 40px; height: 40px; background-color: var(--color-accent); border-radius: 50%;">
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <button class="theme-toggle" id="theme-toggle">☀️</button>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span style="color: var(--color-text-muted);">Welcome, Elena</span>
+                        <div
+                            style="width: 40px; height: 40px; background-color: var(--color-accent); border-radius: 50%;">
+                        </div>
                     </div>
                 </div>
             </header>
@@ -252,6 +259,7 @@
 
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

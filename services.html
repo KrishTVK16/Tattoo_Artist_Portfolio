@@ -7,47 +7,120 @@
     <title>Services | InkRealm</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .service-card {
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            padding: 30px;
-            margin-bottom: 20px;
-            transition: var(--transition);
+        .service-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
         }
 
-        .service-card:hover {
-            border-color: var(--color-accent);
-            transform: translateY(-5px);
+        .service-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-img {
+            flex: 1;
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-row:hover .service-img img {
+            transform: scale(1.05);
+        }
+
+        .service-text {
+            flex: 1;
+            padding: 20px;
         }
 
         .price {
             font-size: 1.5rem;
             color: var(--color-accent);
             font-family: var(--font-nav);
-            margin: 10px 0;
+            margin: 15px 0;
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+
+            .service-row,
+            .service-row.reverse {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .service-img {
+                height: 300px;
+                width: 100%;
+            }
         }
     </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
 
-    <!-- Header (Same) -->
+    <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Ink<span>Realm</span></a>
-            <div class="hamburger" id="hamburger">☰</div>
-            <nav>
-                <ul class="nav-menu" id="nav-menu">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Ink Realm"></a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu">
+                <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link">Artist</a></li>
                     <li><a href="services.html" class="nav-link active">Services</a></li>
-                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
-                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                    <li><a href="blog.html" class="nav-link">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Right Side Controls -->
+            <div style="display: flex; align-items: center;">
+                <div class="auth-buttons">
+                    <a href="dashboard.html" class="auth-btn">Dashboard</a>
+                    <a href="login.html" class="auth-btn">Login</a>
+                    <a href="register.html" class="auth-btn">Sign Up</a>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">☀️</button>
+                <div class="hamburger" id="hamburger">☰</div>
+            </div>
         </div>
     </header>
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-close" id="offcanvas-close">&times;</div>
+        <ul style="list-style: none; text-align: center;">
+            <li style="margin-bottom: 20px;"><a href="index.html" class="nav-link" style="font-size: 1.2rem;">Home</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="portfolio.html" class="nav-link"
+                    style="font-size: 1.2rem;">Portfolio</a></li>
+            <li style="margin-bottom: 20px;"><a href="about.html" class="nav-link" style="font-size: 1.2rem;">Artist</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="services.html" class="nav-link"
+                    style="font-size: 1.2rem;">Services</a></li>
+            <li style="margin-bottom: 20px;"><a href="contact.html" class="nav-link"
+                    style="font-size: 1.2rem;">Contact</a></li>
+            <li style="margin-bottom: 20px;"><a href="booking.html" class="nav-link" style="font-size: 1.2rem;">Book
+                    Now</a></li>
+            <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px;">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn">Sign Up</a>
+            </div>
+        </ul>
+    </div>
 
     <div class="section-header text-center" style="padding-top: 60px;">
         <h1>Services & <span class="text-accent">Pricing</span></h1>
@@ -56,33 +129,61 @@
 
     <section class="section">
         <div class="container">
-            <div class="service-card">
-                <h3>Custom Design</h3>
-                <div class="price">Hourly Rate: $150/hr</div>
-                <p>Completely unique pieces designed from scratch based on your consultation. Perfect for sleeves, back
-                    pieces, and complex concepts. Includes one revision of the artwork.</p>
-                <p class="text-muted">Minimum booking: 2 hours.</p>
+            <!-- Service 1: Custom Design -->
+            <div class="service-row">
+                <div class="service-img">
+                    <img src="images/service-custom.png" alt="Custom Tattoo Design">
+                </div>
+                <div class="service-text">
+                    <h3>Custom Design</h3>
+                    <div class="price">Hourly Rate: $150/hr</div>
+                    <p>Completely unique pieces designed from scratch based on your consultation. Perfect for sleeves,
+                        back pieces, and complex concepts. We sit down not just to draw, but to craft a narrative that
+                        fits your body's flow.</p>
+                    <p class="text-muted">Minimum booking: 2 hours.</p>
+                </div>
             </div>
 
-            <div class="service-card">
-                <h3>Flash Tattoos</h3>
-                <div class="price">Flat Rate: $100 - $400</div>
-                <p>Pre-designed artwork available to be tattooed once. These designs are non-customizable but are priced
-                    at a flat rate. Check the 'Flash' highlights on Instagram for available designs.</p>
+            <!-- Service 2: Flash (Text Left, Image Right) -->
+            <div class="service-row reverse">
+                <div class="service-img">
+                    <img src="images/skull-traditional.png" alt="Flash Tattoo">
+                </div>
+                <div class="service-text">
+                    <h3>Flash Tattoos</h3>
+                    <div class="price">Flat Rate: $100 - $400</div>
+                    <p>Pre-designed artwork available to be tattooed once. These designs capture the essence of
+                        traditional and neo-traditional styles. They are ready to go—just claim yours.</p>
+                    <p class="text-muted">Check our 'Flash' highlights on Instagram for availability.</p>
+                </div>
             </div>
 
-            <div class="service-card">
-                <h3>Cover-Ups & Blast Overs</h3>
-                <div class="price">Hourly Rate: $180/hr</div>
-                <p>Specialized service to hide or rework old tattoos. Requires an in-person consultation to assess
-                    feasibility. These sessions often require more time and skill.</p>
+            <!-- Service 3: Cover-Ups -->
+            <div class="service-row">
+                <div class="service-img">
+                    <img src="images/back-coverup.png" alt="Cover Up Tattoo">
+                </div>
+                <div class="service-text">
+                    <h3>Cover-Ups & Blast Overs</h3>
+                    <div class="price">Hourly Rate: $180/hr</div>
+                    <p>Specialized service to hide or rework old tattoos. We don't just "black it out"—we incorporate
+                        strategic texture and depth to make the old ink vanish into a new masterpiece.</p>
+                    <p class="text-muted">Requires in-person consultation.</p>
+                </div>
             </div>
 
-            <div class="service-card">
-                <h3>Consultations</h3>
-                <div class="price">Free (30 Mins)</div>
-                <p>A face-to-face or video chat to discuss your ideas, placement, and pricing. Required for all
-                    large-scale custom work.</p>
+            <!-- Service 4: Consultations (Text Left, Image Right) -->
+            <div class="service-row reverse">
+                <div class="service-img">
+                    <img src="images/hero-bg.png" alt="Tattoo Consultation">
+                </div>
+                <div class="service-text">
+                    <h3>Consultations</h3>
+                    <div class="price">Free (30 Mins)</div>
+                    <p>A face-to-face or video chat to discuss your ideas, placement, and pricing. We take the time to
+                        ensure you are 100% comfortable with the concept before a needle touches skin.</p>
+                    <a href="booking.html" class="btn btn-sm">Book Consultation</a>
+                </div>
             </div>
         </div>
     </section>
@@ -104,11 +205,83 @@
         </div>
     </section>
 
-    <footer style="margin-top: auto;">
-        <div class="container text-center text-muted copyright">
-            &copy; 2024 InkRealm Studio.
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: block;"><img src="logo.png"
+                            alt="Ink Realm"></a>
+                    <p>Art that bleeds soul. Specializing in dark realism and fine line customizations.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 12a4 4 0 1 0 8 0V4a5 5 0 0 0-5 5"></path>
+                                <path d="M12 12v8"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Artist</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing & Rates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="aftercare.html">Aftercare Guide</a></li>
+                        <li><a href="booking.html">Booking Policy</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on travel dates and new flash drops.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px;">
+                        <button type="submit" class="btn" style="width: 100%; padding: 10px;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 InkRealm Studio. All Rights Reserved.
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="back-to-top">↑</div>
     <script src="script.js"></script>
 </body>
 

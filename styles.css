@@ -1,9 +1,4 @@
-/* 
-   Tattoo Portfolio Website - Core Styles 
-   Theme: Dark, Premium, Ink & Skin
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon&family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500&display=swap');
 
 :root {
     /* Colors */
@@ -12,16 +7,20 @@
     --color-bg-card: #161616;
     --color-text-main: #e0e0e0;
     --color-text-muted: #a0a0a0;
-    --color-accent: #d4af37; /* Metallic Gold */
+    --color-accent: #d4af37;
+    /* Metallic Gold */
     --color-accent-hover: #b59220;
     --color-border: #333333;
     --color-error: #ff4d4d;
     --color-success: #4caf50;
 
+    /* Header Background */
+    --color-header-bg: rgba(10, 10, 10, 0.95);
+
     /* Typography */
-    --font-heading: 'Cinzel', serif;
-    --font-nav: 'Oswald', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Pinyon Script';
+    --font-nav: 'Pinyon Script';
+    --font-body: 'Pinyon Script';
 
     /* Spacing */
     --container-width: 1200px;
@@ -32,6 +31,25 @@
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
     --transition: all 0.3s ease;
+
+    /* Light Mode Variables */
+    --light-bg: #ffffff;
+    --light-bg-alt: #f4f4f4;
+    --light-bg-card: #ffffff;
+    --light-text-main: #000000;
+    /* Pure Black for headers */
+    --light-text-muted: #666666;
+    --light-border: #e0e0e0;
+}
+
+[data-theme="light"] {
+    --color-bg: var(--light-bg);
+    --color-bg-alt: var(--light-bg-alt);
+    --color-bg-card: var(--light-bg-card);
+    --color-text-main: var(--light-text-main);
+    --color-text-muted: var(--light-text-muted);
+    --color-border: var(--light-border);
+    --color-header-bg: rgba(255, 255, 255, 0.95);
 }
 
 /* Reset */
@@ -45,6 +63,8 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text-main);
     font-family: var(--font-body);
+    font-size: 1.1rem;
+    /* Slightly increased base size for script readability */
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -65,20 +85,48 @@ img {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
-    color: #ffffff;
-    font-weight: 700;
+    color: var(--color-text-main);
+    font-weight: 400;
+    /* Script fonts often don't have 700 weight */
     line-height: 1.2;
     margin-bottom: 1rem;
-    text-transform: uppercase;
+    text-transform: none;
+    /* Script fonts looks bad in all-caps usually, checking user preference but normally standard case is better */
     letter-spacing: 1px;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.75rem; color: var(--color-accent); }
-p { margin-bottom: 1.5rem; color: var(--color-text-muted); }
+h1 {
+    font-size: 3rem;
+    /* Reduced from 3.5rem */
+}
+
+h2 {
+    font-size: 2.2rem;
+    /* Reduced from 2.5rem */
+}
+
+h3 {
+    font-size: 1.5rem;
+    /* Reduced from 1.75rem */
+    color: var(--color-accent);
+}
+
+h4 {
+    font-size: 1.25rem;
+    /* Reduced scale */
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+}
 
 /* Layout Utilities */
 .container {
@@ -95,8 +143,13 @@ p { margin-bottom: 1.5rem; color: var(--color-text-muted); }
     background-color: var(--color-bg-alt);
 }
 
-.text-center { text-align: center; }
-.text-accent { color: var(--color-accent); }
+.text-center {
+    text-align: center;
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
 
 /* Buttons */
 .btn {
@@ -130,7 +183,7 @@ p { margin-bottom: 1.5rem; color: var(--color-text-muted); }
 
 /* Header & Nav */
 header {
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: var(--color-header-bg);
     border-bottom: 1px solid var(--color-border);
     padding: 20px 0;
     position: sticky;
@@ -152,11 +205,14 @@ header {
     letter-spacing: 2px;
 }
 
-.logo span { color: var(--color-accent); }
+.logo span {
+    color: var(--color-accent);
+}
 
-.nav-menu {
+.nav-menu ul {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .nav-link {
@@ -164,17 +220,95 @@ header {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--color-text-muted);
+    color: #7c7b7a;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--color-accent);
+}
+
+/* Navigation & Components */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text-main);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin-left: 15px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.auth-btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--font-nav);
+    text-decoration: none;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    transition: var(--transition);
+}
+
+.auth-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
 }
 
 .hamburger {
     display: none;
     cursor: pointer;
     font-size: 1.5rem;
+}
+
+/* Offcanvas Menu (Mobile) */
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: var(--color-bg-card);
+    z-index: 2000;
+    padding: 40px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.offcanvas-menu.active {
+    right: 0;
+}
+
+.offcanvas-close {
+    align-self: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 30px;
+    color: var(--color-accent);
+}
+
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1999;
+    display: none;
+}
+
+.offcanvas-backdrop.active {
+    display: block;
 }
 
 /* Footer */
@@ -198,8 +332,57 @@ footer {
     font-size: 1.2rem;
 }
 
-.footer-links li { margin-bottom: 10px; }
-.footer-links a:hover { color: var(--color-accent); }
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transform: translateY(100px);
+    transition: var(--transition);
+    cursor: pointer;
+    z-index: 900;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+    transform: translateY(0);
+}
+
+.newsletter-form input {
+    margin-bottom: 10px;
+    background: var(--color-bg);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+}
 
 .copyright {
     text-align: center;
@@ -211,33 +394,62 @@ footer {
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    
-    .hamburger { display: block; }
-    
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background-color: var(--color-bg);
-        width: 100%;
-        height: calc(100vh - 80px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
+/* Mobile Responsive Updates */
+@media (max-width: 900px) {
+
+    /* Adjusted breakpoint for more menu items */
+    .nav-menu,
+    .auth-buttons,
+    .theme-toggle {
+        display: none;
+        /* Hide default nav elements on mobile */
     }
 
-    .nav-menu.active { left: 0; }
+    .hamburger {
+        display: block;
+    }
+
+    /* Offcanvas styles handle the rest */
+}
+
+/* Logo Image Styles */
+.logo {
+    display: inline-flex;
+    /* Helps align image */
+    align-items: center;
+    line-height: 0;
+    /* Removes extra space for text */
+}
+
+.logo img {
+    height: 60px;
+    /* User requested "at least 60px" */
+    width: auto;
+    /* Let width scale initially, or set max-width if needed */
+    min-width: 100px;
+    /* User requested "width like 100px" */
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .logo img {
+        height: 50px;
+        /* Slightly smaller on mobile */
+        min-width: 80px;
+    }
 }

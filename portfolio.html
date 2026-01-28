@@ -108,27 +108,64 @@
             cursor: pointer;
         }
     </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
 
-    <!-- Header (Same as Index) -->
+    <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Ink<span>Realm</span></a>
-            <div class="hamburger" id="hamburger">☰</div>
-            <nav>
-                <ul class="nav-menu" id="nav-menu">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Ink Realm"></a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu">
+                <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link">Artist</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="aftercare.html" class="nav-link">Aftercare</a></li>
-                    <li><a href="booking.html" class="btn btn-outline" style="padding: 8px 20px;">Book Now</a></li>
+                    <li><a href="blog.html" class="nav-link">Journal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Right Side Controls -->
+            <div style="display: flex; align-items: center;">
+                <div class="auth-buttons">
+                    <a href="dashboard.html" class="auth-btn">Dashboard</a>
+                    <a href="login.html" class="auth-btn">Login</a>
+                    <a href="register.html" class="auth-btn">Sign Up</a>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">☀️</button>
+                <div class="hamburger" id="hamburger">☰</div>
+            </div>
         </div>
     </header>
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas-backdrop" id="offcanvas-backdrop"></div>
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="offcanvas-close" id="offcanvas-close">&times;</div>
+        <ul style="list-style: none; text-align: center;">
+            <li style="margin-bottom: 20px;"><a href="index.html" class="nav-link" style="font-size: 1.2rem;">Home</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="portfolio.html" class="nav-link"
+                    style="font-size: 1.2rem;">Portfolio</a></li>
+            <li style="margin-bottom: 20px;"><a href="about.html" class="nav-link" style="font-size: 1.2rem;">Artist</a>
+            </li>
+            <li style="margin-bottom: 20px;"><a href="services.html" class="nav-link"
+                    style="font-size: 1.2rem;">Services</a></li>
+            <li style="margin-bottom: 20px;"><a href="contact.html" class="nav-link"
+                    style="font-size: 1.2rem;">Contact</a></li>
+            <li style="margin-bottom: 20px;"><a href="booking.html" class="nav-link" style="font-size: 1.2rem;">Book
+                    Now</a></li>
+            <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px;">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn">Sign Up</a>
+            </div>
+        </ul>
+    </div>
 
     <div class="section-header text-center" style="padding-top: 60px;">
         <h1>The <span class="text-accent">Gallery</span></h1>
@@ -150,8 +187,7 @@
                 <!-- Portfolio Items -->
                 <!-- Item 1 -->
                 <div class="portfolio-item" data-category="realism">
-                    <img src="https://images.unsplash.com/photo-1590246294523-2de4e0fe552c?auto=format&fit=crop&q=80"
-                        alt="Tattoo Art" class="portfolio-img">
+                    <img src="images/lion-realism.png" alt="Tattoo Art" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h4>Lion Portrait</h4>
                         <p class="text-accent">Realism • 6 Hours</p>
@@ -159,8 +195,7 @@
                 </div>
                 <!-- Item 2 -->
                 <div class="portfolio-item" data-category="traditional">
-                    <img src="https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80"
-                        alt="Tattoo Art" class="portfolio-img">
+                    <img src="images/skull-traditional.png" alt="Tattoo Art" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h4>Classic Skull</h4>
                         <p class="text-accent">Traditional • 3 Hours</p>
@@ -168,8 +203,7 @@
                 </div>
                 <!-- Item 3 -->
                 <div class="portfolio-item" data-category="healed">
-                    <img src="https://images.unsplash.com/photo-1621112904887-419379ce6824?auto=format&fit=crop&q=80"
-                        alt="Healed Tattoo" class="portfolio-img">
+                    <img src="images/floral-healed.png" alt="Healed Tattoo" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h4>Healed Floral Sleeve</h4>
                         <p class="text-accent">Vegetation • Healed 6 Months</p>
@@ -177,8 +211,7 @@
                 </div>
                 <!-- Item 4 Cover Up -->
                 <div class="portfolio-item" data-category="coverup">
-                    <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&q=80"
-                        alt="Cover Up" class="portfolio-img">
+                    <img src="images/back-coverup.png" alt="Cover Up" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h4>Back Cover Up</h4>
                         <p class="text-accent">Cover Up • 8 Hours</p>
@@ -186,8 +219,7 @@
                 </div>
                 <!-- Item 5 -->
                 <div class="portfolio-item" data-category="realism">
-                    <img src="https://images.unsplash.com/photo-1560707303-4e9803d157df?auto=format&fit=crop&q=80"
-                        alt="Tattoo Art" class="portfolio-img">
+                    <img src="images/eye-realism.png" alt="Tattoo Art" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h4>Eye Detail</h4>
                         <p class="text-accent">Micro Realism</p>
@@ -195,8 +227,7 @@
                 </div>
                 <!-- Item 6 -->
                 <div class="portfolio-item" data-category="traditional">
-                    <img src="https://images.unsplash.com/photo-1577744066060-e747449a036c?auto=format&fit=crop&q=80"
-                        alt="Tattoo Art" class="portfolio-img">
+                    <img src="images/snake-dagger.png" alt="Tattoo Art" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h4>Dagger & Snake</h4>
                         <p class="text-accent">Neo Traditional</p>
@@ -212,15 +243,83 @@
         <img class="modal-content" id="modalImg">
     </div>
 
-    <!-- Footer (Same as Index) -->
+    <!-- Footer -->
     <footer>
-        <div class="container mobile-footer-container">
-            <!-- Simplified footer classes for brevity, relying on styles.css -->
-            <div class="copyright text-center">
-                &copy; 2024 InkRealm Studio.
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: block;"><img src="logo.png"
+                            alt="Ink Realm"></a>
+                    <p>Art that bleeds soul. Specializing in dark realism and fine line customizations.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M8 12a4 4 0 1 0 8 0V4a5 5 0 0 0-5 5"></path>
+                                <path d="M12 12v8"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Artist</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing & Rates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="aftercare.html">Aftercare Guide</a></li>
+                        <li><a href="booking.html">Booking Policy</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                        <li><a href="dashboard.html">Client Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated on travel dates and new flash drops.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px;">
+                        <button type="submit" class="btn" style="width: 100%; padding: 10px;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 InkRealm Studio. All Rights Reserved.
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="back-to-top">↑</div>
 
     <script src="script.js"></script>
     <script>
