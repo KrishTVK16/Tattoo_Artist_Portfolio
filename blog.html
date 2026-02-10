@@ -55,6 +55,8 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            line-clamp: 3;
+            /* Standard property for compatibility */
         }
 
         .read-more {
@@ -139,8 +141,7 @@
                 <!-- Blog Post 1 -->
                 <article class="blog-card">
                     <a href="blog-details.html">
-                        <div class="blog-img"
-                            style="background-image: url('https://images.unsplash.com/photo-1598371839696-5c5e62d53637?auto=format&fit=crop&q=80');">
+                        <div class="blog-img" style="background-image: url('images/Aftercare_Guide.avif');">
                         </div>
                     </a>
                     <div class="blog-content">
@@ -163,7 +164,7 @@
                     <div class="blog-content">
                         <span class="blog-date">Sep 28, 2023</span>
                         <h3><a href="blog-details.html" style="text-decoration: none; color: inherit;">Choosing Your
-                                First Realism Piece</a></h3>
+                                First Realism</a></h3>
                         <p>Realism tattoos require specific skin types and placements to age well. Let's dive into what
                             makes a good reference photo.</p>
                         <a href="blog-details.html" class="read-more">Read Article &rarr;</a>
@@ -181,73 +182,178 @@
                         <span class="blog-date">Sep 15, 2023</span>
                         <h3><a href="blog-details.html" style="text-decoration: none; color: inherit;">Convention Travel
                                 Dates 2024</a></h3>
-                        <p>I'll be hitting the road this year! Check out the list of cities I'll be visiting and how to
-                            book a slot.</p>
+                        <p>I'll be hitting the road this year! Check out the list of cities for the new branch and I'll
+                            be
+                            visiting there and will book a slot in advance.</p>
                         <a href="blog-details.html" class="read-more">Read Article &rarr;</a>
                     </div>
                 </article>
 
             </div>
         </div>
-    </section>
+        <section class="section section-alt" id="faq-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Common <span class="text-accent">Questions</span></h2>
+                    <p>Curious about the process? Here's what you need to know.</p>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Brand -->
-                <div class="footer-col">
-                    <a href="index.html" class="logo"
-                        style="margin-bottom: 20px; display: block;"><img src="logo.png" alt="Ink Realm"></a>
-                    <p>Art that bleeds soul. Specializing in dark realism and fine line customizations.</p>
-                    <div class="social-links">
-                        <a href="#">IG</a>
-                        <a href="#">TK</a>
-                        <a href="#">PT</a>
+                <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+                    <!-- Q1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How do I book an appointment?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Booking is done via our <a href="booking.html" class="text-accent">Booking Page</a>. A
+                                non-refundable deposit is required to secure your date. Please describe your idea in
+                                detail
+                                and attach references if possible.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What are your rates?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I charge an hourly rate for large scale work and a flat piece price for smaller, one-shot
+                                tattoos. Please visit the <a href="pricing.html" class="text-accent">Pricing Page</a>
+                                for a
+                                detailed breakdown.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Does it hurt?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, but it is manageable. Pain tolerance varies by person and placement. We recommend a
+                                good
+                                night's sleep and a hearty meal before your session to keep your blood sugar stable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How should I prepare for my session?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Avoid alcohol for 24 hours prior. Hydrate well. Wear comfortable clothing that allows
+                                easy
+                                access to the area being tattooed. Bring snacks and water for longer sessions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What is your cancellation policy?</h4>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We require at least 48 hours notice for cancellations or rescheduling. Deposits are
+                                forfeited
+                                for last-minute cancellations or no-shows.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Company -->
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Artist</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing & Rates</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Brand -->
+                    <div class="footer-col">
+                        <a href="index.html" class="logo" style="margin-bottom: 20px; display: block;"><img
+                                src="logo.png" alt="Ink Realm"></a>
+                        <p>Art that bleeds soul. Specializing in dark realism and fine line customizations.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="TikTok">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Pinterest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M8 12a4 4 0 1 0 8 0V4a5 5 0 0 0-5 5"></path>
+                                    <path d="M12 12v8"></path>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Artist</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="pricing.html">Pricing & Rates</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="aftercare.html">Aftercare Guide</a></li>
+                            <li><a href="booking.html">Booking Policy</a></li>
+                            <li><a href="contact.html">FAQ</a></li>
+                            <li><a href="dashboard.html">Client Portal</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer-col">
+                        <h4>Newsletter</h4>
+                        <p>Stay updated on travel dates and new flash drops.</p>
+                        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                            <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px;">
+                            <button type="submit" class="btn" style="width: 100%; padding: 10px;">Subscribe</button>
+                        </form>
+                    </div>
                 </div>
-
-                <!-- Support -->
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <ul class="footer-links">
-                        <li><a href="aftercare.html">Aftercare Guide</a></li>
-                        <li><a href="booking.html">Booking Policy</a></li>
-                        <li><a href="contact.html">FAQ</a></li>
-                        <li><a href="dashboard.html">Client Portal</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Stay updated on travel dates and new flash drops.</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
-                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px;">
-                        <button type="submit" class="btn" style="width: 100%; padding: 10px;">Subscribe</button>
-                    </form>
+                <div class="copyright">
+                    &copy; 2026 InkRealm Studio. All Rights Reserved.
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 InkRealm Studio. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Back to Top -->
-    <div class="back-to-top" id="back-to-top">↑</div>
-    <script src="script.js"></script>
+        <!-- Back to Top -->
+        <div class="back-to-top" id="back-to-top">↑</div>
+        <script src="script.js"></script>
 </body>
 
 </html>

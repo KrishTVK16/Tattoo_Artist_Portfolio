@@ -26,12 +26,12 @@
         .contact-item h4 {
             color: var(--color-accent);
             margin-bottom: 10px;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
         }
 
         .contact-item p {
             margin-bottom: 0px;
-            color: #d0d0d0;
+            color: var(--color-text-muted);
         }
 
         input,
@@ -40,7 +40,7 @@
             padding: 12px;
             background-color: var(--color-bg-alt);
             border: 1px solid var(--color-border);
-            color: #fff;
+            color: var(--color-text-main);
             margin-bottom: 20px;
             font-family: var(--font-body);
         }
@@ -128,41 +128,79 @@
 
                 <!-- Contact Info -->
                 <div class="contact-info">
+                    <h3 class="text-center" style="margin-bottom: 30px;">Contact Information</h3>
                     <div class="contact-info-box">
                         <div class="contact-item">
-                            <h4>Studio Address</h4>
-                            <p>123 Art District Ave, Suite 404</p>
-                            <p>Creative City, NY 10012</p>
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Studio Address</h4>
+                                <p>123 Art District Ave, Suite 404</p>
+                                <p>Creative City, NY 10012</p>
+                            </div>
                         </div>
                         <div class="contact-item">
-                            <h4>Email Us</h4>
-                            <p>General: hello@inkrealm.com</p>
-                            <p>Booking: booking@inkrealm.com</p>
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>General: hello@inkrealm.com</p>
+                                <p>Booking: booking@inkrealm.com</p>
+                            </div>
                         </div>
                         <div class="contact-item">
-                            <h4>Working Hours</h4>
-                            <p>Tue - Sat: 11:00 AM - 8:00 PM</p>
-                            <p>Sun - Mon: Closed (By Appt Only)</p>
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Tue - Sat: 11:00 AM - 8:00 PM</p>
+                                <p>Sun - Mon: Closed (By Appt Only)</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="contact-form">
+                    <h3 class="text-center" style="margin-bottom: 30px;">Send a Message</h3>
                     <form id="contactForm">
-                        <label style="display: block; margin-bottom: 8px; color: #fff;">Name</label>
+                        <label style="display: block; margin-bottom: 8px; color: var(--color-text-main);">Name</label>
                         <input type="text" placeholder="Your Name" required>
 
-                        <label style="display: block; margin-bottom: 8px; color: #fff;">Email</label>
+                        <label style="display: block; margin-bottom: 8px; color: var(--color-text-main);">Email</label>
                         <input type="email" placeholder="Your Email" required>
 
-                        <label style="display: block; margin-bottom: 8px; color: #fff;">Subject</label>
+                        <label
+                            style="display: block; margin-bottom: 8px; color: var(--color-text-main);">Subject</label>
                         <input type="text" placeholder="General Inquiry" required>
 
-                        <label style="display: block; margin-bottom: 8px; color: #fff;">Message</label>
+                        <label
+                            style="display: block; margin-bottom: 8px; color: var(--color-text-main);">Message</label>
                         <textarea rows="5" placeholder="How can we help you?" required></textarea>
 
-                        <button type="submit" class="btn">Send Message</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn">Send Message</button>
+                        </div>
                     </form>
                 </div>
 
@@ -170,11 +208,67 @@
         </div>
     </section>
 
-    <!-- Map (Placeholder) -->
-    <div
-        style="width: 100%; height: 400px; background-color: #222; display: flex; align-items: center; justify-content: center; color: #555;">
-        <span style="font-size: 1.5rem;">[ Google Map Integration ]</span>
+    <!-- Map -->
+    <div style="width: 100%; height: 450px; filter: grayscale(100%) invert(92%) contrast(83%);">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1645564756836!5m2!1sen!2sus"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
+
+    <!-- Upcoming Locations -->
+    <section class="section section-alt">
+        <div class="container text-center">
+            <h2>Upcoming <span class="text-accent">Guest Spots</span></h2>
+            <p>Catch me on the road. Limited slots available.</p>
+
+            <div class="upcoming-locations">
+                <!-- Location 1 -->
+                <div class="location-card">
+                    <div class="location-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4>Los Angeles</h4>
+                    <p class="location-date">Oct 10 - Oct 25, 2026</p>
+                    <p class="location-studio">Black Diamond Tattoo</p>
+                    <a href="booking.html" class="btn btn-outline btn-sm">Book Slot</a>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="location-card">
+                    <div class="location-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4>London</h4>
+                    <p class="location-date">Nov 15 - Nov 30, 2026</p>
+                    <p class="location-studio">Sang Bleu</p>
+                    <a href="booking.html" class="btn btn-outline btn-sm">Book Slot</a>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="location-card">
+                    <div class="location-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4>Tokyo</h4>
+                    <p class="location-date">Jan 05 - Jan 20, 2027</p>
+                    <p class="location-studio">Three Tides Tattoo</p>
+                    <a href="booking.html" class="btn btn-outline btn-sm">Book Slot</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -208,6 +302,13 @@
                                 stroke-linejoin="round">
                                 <path d="M8 12a4 4 0 1 0 8 0V4a5 5 0 0 0-5 5"></path>
                                 <path d="M12 12v8"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg>
                         </a>
                     </div>
