@@ -59,7 +59,13 @@
             <!-- Desktop Nav -->
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home One</a></li>
+                            <li><a href="home-2.html">Home Two</a></li>
+                        </ul>
+                    </li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="about.html" class="nav-link active">Artist</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
@@ -88,6 +94,9 @@
         <ul style="list-style: none; text-align: center;">
             <li style="margin-bottom: 20px;"><a href="index.html" class="nav-link" style="font-size: 1.2rem;">Home</a>
             </li>
+            <li style="margin-bottom: 20px;"><a href="home-2.html" class="nav-link" style="font-size: 1.2rem;">Home
+                    Two</a>
+            </li>
             <li style="margin-bottom: 20px;"><a href="portfolio.html" class="nav-link"
                     style="font-size: 1.2rem;">Portfolio</a></li>
             <li style="margin-bottom: 20px;"><a href="about.html" class="nav-link" style="font-size: 1.2rem;">Artist</a>
@@ -99,6 +108,7 @@
             <li style="margin-bottom: 20px;"><a href="booking.html" class="nav-link" style="font-size: 1.2rem;">Book
                     Now</a></li>
             <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px;">
+                <a href="dashboard.html" class="btn btn-outline">Dashboard</a>
                 <a href="login.html" class="btn btn-outline">Login</a>
                 <a href="register.html" class="btn">Sign Up</a>
             </div>

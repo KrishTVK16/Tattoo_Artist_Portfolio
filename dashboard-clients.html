@@ -7,6 +7,11 @@
     <title>Clients | Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Default state for hamburger on desktop */
+        .dashboard-hamburger {
+            display: none;
+        }
+
         .dashboard-container {
             display: grid;
             grid-template-columns: 250px 1fr;
@@ -17,6 +22,8 @@
             background-color: var(--color-bg-alt);
             border-right: 1px solid var(--color-border);
             padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
         }
 
         .sidebar h2 {
@@ -72,7 +79,27 @@
             }
 
             .sidebar {
-                display: none;
+                position: fixed;
+                top: 0;
+                left: -280px;
+                width: 280px;
+                height: 100vh;
+                z-index: 1001;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .dashboard-hamburger {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+                margin-right: 15px;
             }
         }
     </style>
@@ -94,6 +121,15 @@
                 <li><a href="dashboard-gallery.html">Gallery Upload</a></li>
                 <li><a href="index.html" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
             </ul>
+
+            <!-- Mobile User Profile -->
+            <div class="sidebar-profile">
+                <div class="profile-info">
+                    <span class="profile-name">Elena</span>
+                    <span class="profile-role">Admin</span>
+                </div>
+                <img src="images/Elena.png" alt="Profile" class="profile-img">
+            </div>
         </aside>
 
         <!-- Main Content -->
@@ -102,63 +138,66 @@
                 <h2>Client <span class="text-accent">Database</span></h2>
                 <div style="display: flex; gap: 20px; align-items: center;">
                     <button class="theme-toggle" id="theme-toggle">☀️</button>
-                    <div style="display: flex; gap: 10px; align-items: center;">
+                    <button class="dashboard-hamburger" id="dashboard-hamburger"
+                        style="background:none; border:none; color:inherit;">☰</button>
+                    <div class="header-profile" style="display: flex; gap: 10px; align-items: center;">
                         <span style="color: var(--color-text-muted);">Welcome, Elena</span>
-                        <div
-                            style="width: 40px; height: 40px; background-color: var(--color-accent); border-radius: 50%;">
-                        </div>
+                        <img src="images/Elena.png" alt="Profile"
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-accent);">
                     </div>
                 </div>
             </header>
 
-            <table class="client-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Last Session</th>
-                        <th>Total Spent</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Sarah Jenkins</strong></td>
-                        <td>sarah.j@email.com</td>
-                        <td>Oct 24, 2026</td>
-                        <td>$800.00</td>
-                        <td><span style="color: var(--color-success);">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mike Ross</strong></td>
-                        <td>mike.r@email.com</td>
-                        <td>Sep 12, 2026</td>
-                        <td>$1,200.00</td>
-                        <td><span style="color: var(--color-accent);">VIP</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Jessica Lee</strong></td>
-                        <td>j.lee@email.com</td>
-                        <td>Oct 22, 2026</td>
-                        <td>$450.00</td>
-                        <td><span style="color: var(--color-text-muted);">New</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>David Black</strong></td>
-                        <td>d.black@email.com</td>
-                        <td>Oct 20, 2026</td>
-                        <td>$2,500.00</td>
-                        <td><span style="color: var(--color-success);">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Emma Watson</strong></td>
-                        <td>emma.w@email.com</td>
-                        <td>Aug 15, 2026</td>
-                        <td>$350.00</td>
-                        <td><span style="color: var(--color-error);">Inactive</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="client-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Last Session</th>
+                            <th>Total Spent</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sarah Jenkins</strong></td>
+                            <td>sarah.j@email.com</td>
+                            <td>Oct 24, 2026</td>
+                            <td>$800.00</td>
+                            <td><span style="color: var(--color-success);">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mike Ross</strong></td>
+                            <td>mike.r@email.com</td>
+                            <td>Sep 12, 2026</td>
+                            <td>$1,200.00</td>
+                            <td><span style="color: var(--color-accent);">VIP</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jessica Lee</strong></td>
+                            <td>j.lee@email.com</td>
+                            <td>Oct 22, 2026</td>
+                            <td>$450.00</td>
+                            <td><span style="color: var(--color-text-muted);">New</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>David Black</strong></td>
+                            <td>d.black@email.com</td>
+                            <td>Oct 20, 2026</td>
+                            <td>$2,500.00</td>
+                            <td><span style="color: var(--color-success);">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Emma Watson</strong></td>
+                            <td>emma.w@email.com</td>
+                            <td>Aug 15, 2026</td>
+                            <td>$350.00</td>
+                            <td><span style="color: var(--color-error);">Inactive</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
         </main>
     </div>

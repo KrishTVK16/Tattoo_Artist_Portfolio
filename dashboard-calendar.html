@@ -7,6 +7,11 @@
     <title>Calendar | Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Default state for hamburger on desktop */
+        .dashboard-hamburger {
+            display: none;
+        }
+
         .dashboard-container {
             display: grid;
             grid-template-columns: 250px 1fr;
@@ -17,6 +22,8 @@
             background-color: var(--color-bg-alt);
             border-right: 1px solid var(--color-border);
             padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
         }
 
         .sidebar h2 {
@@ -53,7 +60,27 @@
             }
 
             .sidebar {
-                display: none;
+                position: fixed;
+                top: 0;
+                left: -280px;
+                width: 280px;
+                height: 100vh;
+                z-index: 1001;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .dashboard-hamburger {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+                margin-right: 15px;
             }
         }
     </style>
@@ -75,6 +102,15 @@
                 <li><a href="dashboard-gallery.html">Gallery Upload</a></li>
                 <li><a href="index.html" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
             </ul>
+
+            <!-- Mobile User Profile -->
+            <div class="sidebar-profile">
+                <div class="profile-info">
+                    <span class="profile-name">Elena</span>
+                    <span class="profile-role">Admin</span>
+                </div>
+                <img src="images/Elena.png" alt="Profile" class="profile-img">
+            </div>
         </aside>
 
         <!-- Main Content -->
@@ -83,11 +119,12 @@
                 <h2>My <span class="text-accent">Schedule</span></h2>
                 <div style="display: flex; gap: 20px; align-items: center;">
                     <button class="theme-toggle" id="theme-toggle">☀️</button>
-                    <div style="display: flex; gap: 10px; align-items: center;">
+                    <button class="dashboard-hamburger" id="dashboard-hamburger"
+                        style="background:none; border:none; color:inherit;">☰</button>
+                    <div class="header-profile" style="display: flex; gap: 10px; align-items: center;">
                         <span style="color: var(--color-text-muted);">Welcome, Elena</span>
-                        <div
-                            style="width: 40px; height: 40px; background-color: var(--color-accent); border-radius: 50%;">
-                        </div>
+                        <img src="images/Elena.png" alt="Profile"
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-accent);">
                     </div>
                 </div>
             </header>
@@ -95,37 +132,41 @@
             <div
                 style="background: var(--color-bg-card); padding: 40px; border: 1px solid var(--color-border); text-align: center;">
                 <h3 style="margin-bottom: 20px;">October 2026</h3>
-                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center;">
-                    <!-- Weekdays -->
-                    <div style="font-weight: bold; color: var(--color-accent);">Sun</div>
-                    <div style="font-weight: bold; color: var(--color-accent);">Mon</div>
-                    <div style="font-weight: bold; color: var(--color-accent);">Tue</div>
-                    <div style="font-weight: bold; color: var(--color-accent);">Wed</div>
-                    <div style="font-weight: bold; color: var(--color-accent);">Thu</div>
-                    <div style="font-weight: bold; color: var(--color-accent);">Fri</div>
-                    <div style="font-weight: bold; color: var(--color-accent);">Sat</div>
+                <div class="table-responsive">
+                    <div class="calendar-grid"
+                        style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center;">
+                        <!-- Weekdays -->
+                        <div style="font-weight: bold; color: var(--color-accent);">Sun</div>
+                        <div style="font-weight: bold; color: var(--color-accent);">Mon</div>
+                        <div style="font-weight: bold; color: var(--color-accent);">Tue</div>
+                        <div style="font-weight: bold; color: var(--color-accent);">Wed</div>
+                        <div style="font-weight: bold; color: var(--color-accent);">Thu</div>
+                        <div style="font-weight: bold; color: var(--color-accent);">Fri</div>
+                        <div style="font-weight: bold; color: var(--color-accent);">Sat</div>
 
-                    <!-- Days -->
-                    <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">28</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">29</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">30</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">1</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">2</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">3</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">4
-                        <div style="font-size: 0.7rem; color: var(--color-accent); margin-top: 5px;">• 2 Sessions</div>
-                    </div>
+                        <!-- Days -->
+                        <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">28</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">29</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border); opacity: 0.5;">30</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">1</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">2</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">3</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">4
+                            <div style="font-size: 0.7rem; color: var(--color-accent); margin-top: 5px;">• 2 Sessions
+                            </div>
+                        </div>
 
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">5</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">6</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">7</div>
-                    <div
-                        style="padding: 20px; border: 1px solid var(--color-border); background: var(--color-accent); color: #000; font-weight: bold;">
-                        8
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">5</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">6</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">7</div>
+                        <div
+                            style="padding: 20px; border: 1px solid var(--color-border); background: var(--color-accent); color: #000; font-weight: bold;">
+                            8
+                        </div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">9</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">10</div>
+                        <div style="padding: 20px; border: 1px solid var(--color-border);">11</div>
                     </div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">9</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">10</div>
-                    <div style="padding: 20px; border: 1px solid var(--color-border);">11</div>
                 </div>
             </div>
 

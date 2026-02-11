@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /*** Theme Toggle ***/
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     // Check local storage or system preference
@@ -12,27 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply theme on load
     if (currentTheme === 'light') {
         document.body.setAttribute('data-theme', 'light');
-        if (themeToggle) themeToggle.textContent = '🌙';
+        themeToggles.forEach(toggle => toggle.textContent = '🌙');
     } else {
         document.body.removeAttribute('data-theme');
-        if (themeToggle) themeToggle.textContent = '☀️';
+        themeToggles.forEach(toggle => toggle.textContent = '☀️');
     }
 
     // Toggle event
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             let theme = document.body.getAttribute('data-theme');
             if (theme === 'light') {
                 document.body.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'dark');
-                themeToggle.textContent = '☀️';
+                themeToggles.forEach(t => t.textContent = '☀️');
             } else {
                 document.body.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
-                themeToggle.textContent = '🌙';
+                themeToggles.forEach(t => t.textContent = '🌙');
             }
         });
-    }
+    });
 
     /*** Offcanvas Mobile Menu ***/
     const hamburger = document.getElementById('hamburger');
@@ -97,4 +97,35 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('active');
         });
     });
+
+    /*** Dashboard Sidebar Toggle ***/
+    const dashboardHamburger = document.getElementById('dashboard-hamburger');
+    const dashboardSidebar = document.querySelector('.sidebar');
+
+    if (dashboardHamburger && dashboardSidebar) {
+        dashboardHamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dashboardSidebar.classList.toggle('active');
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 900 &&
+                dashboardSidebar.classList.contains('active') &&
+                !dashboardSidebar.contains(e.target) &&
+                e.target !== dashboardHamburger) {
+                dashboardSidebar.classList.remove('active');
+            }
+        });
+
+        // Close sidebar when a link is clicked
+        const sidebarLinks = dashboardSidebar.querySelectorAll('a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    dashboardSidebar.classList.remove('active');
+                }
+            });
+        });
+    }
 });

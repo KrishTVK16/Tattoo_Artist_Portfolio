@@ -169,9 +169,25 @@ p {
     text-align: center;
 }
 
-.btn:hover {
-    background-color: transparent;
-    color: var(--color-accent);
+/* Main Content Dashboard */
+.main-content {
+    padding: 40px;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll on body */
+}
+
+/* Responsive Table Wrapper */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.table-responsive table {
+    margin-bottom: 0;
+    border: none;
 }
 
 .btn-outline {
@@ -214,8 +230,82 @@ header {
 
 .nav-menu ul {
     display: flex;
-    gap: 30px;
+    gap: 18px;
     align-items: center;
+}
+
+/* Nav Dropdown */
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown>.nav-link {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+}
+
+.nav-dropdown>.nav-link::after {
+    content: '▾';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover>.nav-link::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
+    min-width: 180px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1100;
+    list-style: none;
+    box-shadow: var(--shadow-lg);
+    /* Override inherited flex from .nav-menu ul */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+}
+
+.dropdown-menu li {
+    display: block !important;
+    width: 100%;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-text-muted);
+    font-family: var(--font-nav);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a.active {
+    color: var(--color-accent);
+    background: rgba(212, 175, 55, 0.05);
 }
 
 .nav-link {
@@ -286,6 +376,82 @@ header {
     transition: 0.4s ease;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+
+/* Sidebar profile hidden on desktop, shown on mobile */
+.sidebar-profile {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    /* Show profile in sidebar on mobile */
+    .sidebar-profile {
+        display: flex !important;
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid var(--color-border);
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-name {
+        color: var(--color-text-main);
+        font-weight: 600;
+    }
+
+    .profile-role {
+        color: var(--color-text-muted);
+        font-size: 0.8rem;
+    }
+
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--color-accent);
+    }
+
+    /* Hide profile in header on mobile */
+    .header-profile {
+        display: none !important;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 280px;
+        height: 100vh;
+        z-index: 1001;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        /* override grid layout specific or block */
+        flex-direction: column;
+        background-color: var(--color-bg-alt);
+        /* Ensure background is set */
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Calendar Mobile Adjustments */
+    .calendar-grid {
+        min-width: 600px;
+        /* Force minimum width to trigger scroll */
+    }
 }
 
 .offcanvas-menu.active {
@@ -496,6 +662,15 @@ footer {
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
 }
 
+.text-card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .text-card-content h3 {
     font-family: var(--font-heading);
     color: var(--color-accent);
@@ -542,7 +717,7 @@ footer {
     font-size: 1.3rem;
     max-width: 600px;
     margin: 0 auto 40px;
-    color: var(--color-text-main);
+    color: #e0e0e0;
 }
 
 /* FAQ Section */

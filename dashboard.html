@@ -7,6 +7,11 @@
     <title>Admin Dashboard | InkRealm</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Default state for hamburger on desktop */
+        .dashboard-hamburger {
+            display: none;
+        }
+
         .dashboard-container {
             display: grid;
             grid-template-columns: 250px 1fr;
@@ -17,6 +22,9 @@
             background-color: var(--color-bg-alt);
             border-right: 1px solid var(--color-border);
             padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+            /* Enable vertical scrolling */
         }
 
         .sidebar h2 {
@@ -119,12 +127,40 @@
             }
 
             .sidebar {
-                display: none;
+                /* display: none; Removed this */
+                position: fixed;
+                top: 0;
+                left: -280px;
+                width: 280px;
+                height: 100vh;
+                z-index: 1001;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+                display: block;
+                /* Ensure it's not hidden */
             }
 
-            /* Hide sidebar on mobile for simplified demo */
+            .sidebar.active {
+                left: 0;
+            }
+
+            /* Hide sidebar on mobile for simplified demo - No longer hiding, making it toggleable */
             .stats-cards {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .dashboard-hamburger {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+                margin-right: 15px;
+                /* Spacing from theme toggle */
+            }
+
+            /* Adjust sidebar flex to push profile to bottom */
+            .sidebar {
+                display: flex;
+                flex-direction: column;
             }
         }
     </style>
@@ -146,6 +182,16 @@
                 <li><a href="dashboard-gallery.html">Gallery Upload</a></li>
                 <li><a href="index.html" style="margin-top: 40px; color: var(--color-error);">Logout</a></li>
             </ul>
+
+            <!-- Mobile User Profile -->
+            <!-- Mobile User Profile -->
+            <div class="sidebar-profile">
+                <div class="profile-info">
+                    <span class="profile-name">Elena</span>
+                    <span class="profile-role">Admin</span>
+                </div>
+                <img src="images/Elena.png" alt="Profile" class="profile-img">
+            </div>
         </aside>
 
         <!-- Main Content -->
@@ -155,7 +201,9 @@
                 <h2>Inquiry <span class="text-accent">Portal</span></h2>
                 <div style="display: flex; gap: 20px; align-items: center;">
                     <button class="theme-toggle" id="theme-toggle">☀️</button>
-                    <div style="display: flex; gap: 10px; align-items: center;">
+                    <button class="dashboard-hamburger" id="dashboard-hamburger"
+                        style="background:none; border:none; color:inherit;">☰</button>
+                    <div class="header-profile" style="display: flex; gap: 10px; align-items: center;">
                         <span style="color: var(--color-text-muted);">Welcome, Elena</span>
                         <img src="images/Elena.png" alt="Profile"
                             style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-accent);">
@@ -259,6 +307,7 @@
         </main>
     </div>
     <script src="script.js"></script>
+
 </body>
 
 </html>
