@@ -996,87 +996,6 @@
             margin: 15px auto 20px;
         }
 
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
-        @media (max-width: 1024px) {
-            .styles-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-timeline {
-                flex-wrap: wrap;
-                gap: 30px;
-            }
-
-            .process-connector {
-                display: none;
-            }
-
-            .process-step {
-                flex: 0 0 calc(50% - 15px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr !important;
-            }
-
-            .about-img-v2 {
-                order: -1;
-                margin-bottom: 20px;
-            }
-
-            .styles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-step {
-                flex: 0 0 100%;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .hero-stat {
-                flex-direction: row;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .cta-v2 {
-                background-attachment: scroll;
-            }
-
-            .press-logos {
-                flex-wrap: wrap;
-            }
-
-            .awards-row {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .travel-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .travel-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .travel-date {
-                margin: 0 auto 15px;
-            }
-        }
 
         /* Featured In / Press Section */
         .press-logos {
@@ -1232,6 +1151,142 @@
         @media (max-width: 1024px) {
             .travel-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .styles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-timeline {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .process-connector {
+                display: none;
+            }
+
+            .process-step {
+                flex: 0 0 calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .about-img-v2 {
+                order: -1;
+                margin-bottom: 20px;
+            }
+
+            .styles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .style-card-info {
+                text-align: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                flex: 0 0 100%;
+            }
+
+            .hero-section {
+                height: auto;
+                padding: 120px 0 60px;
+                margin-top: -85px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                padding-top: 20px;
+                width: fit-content;
+                margin: 30px auto 0;
+            }
+
+            .hero-stat {
+                display: grid;
+                grid-template-columns: 80px 1fr;
+                align-items: center;
+                gap: 15px;
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .stat-number {
+                text-align: right;
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+
+            .stat-label {
+                text-align: left;
+                padding-left: 5px;
+            }
+
+            .cta-v2 {
+                background-attachment: scroll;
+            }
+
+            .press-logos {
+                flex-wrap: wrap;
+            }
+
+            .awards-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .travel-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .travel-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .award-badge {
+                width: 100%;
+                max-width: 400px;
+                justify-content: center;
+            }
+
+            .travel-date {
+                margin: 0 auto 15px;
+            }
+
+            .footer-col {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-col .logo {
+                justify-content: center;
             }
         }
     </style>
