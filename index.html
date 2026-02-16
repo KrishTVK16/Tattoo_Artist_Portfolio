@@ -81,8 +81,8 @@
     <section class="hero-section">
         <div class="hero-overlay"></div>
         <div class="container hero-content text-center">
-            <h1>Art that <span class="text-accent">Bleeds</span> Soul</h1>
-            <p>Specializing in Fine Line, Realism, and Custom Blackwork.</p>
+            <h1><span class="hero-highlight">Art that <span class="text-accent">Bleeds</span> Soul</span></h1>
+            <p><span class="hero-highlight">Specializing in Fine Line, Realism, and Custom Blackwork.</span></p>
             <div class="hero-btns">
                 <a href="booking.html" class="btn">Book a Session</a>
                 <a href="portfolio.html" class="btn btn-outline">View Gallery</a>
@@ -371,8 +371,20 @@
             /* Offset fixed header */
         }
 
+        .hero-content h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-main);
+            margin-top: 15px;
+            text-shadow: var(--hero-text-shadow);
+            -webkit-text-stroke: var(--hero-text-stroke);
+        }
+
         .hero-btns {
-            margin-top: 30px;
+            margin-top: 40px;
             display: flex;
             gap: 20px;
             justify-content: center;
